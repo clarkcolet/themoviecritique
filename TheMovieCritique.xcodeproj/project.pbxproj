@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		212C7B861E8017CA009E2A82 /* ResponseEntityClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212C7B851E8017CA009E2A82 /* ResponseEntityClass.swift */; };
+		212C7B8F1E816A1A009E2A82 /* ResponseEntity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 212C7B8D1E816A1A009E2A82 /* ResponseEntity.xcdatamodeld */; };
 		21B7F54D1E797A84007C49C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B7F54C1E797A84007C49C7 /* AppDelegate.swift */; };
 		21B7F54F1E797A84007C49C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B7F54E1E797A84007C49C7 /* ViewController.swift */; };
 		21B7F5521E797A84007C49C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21B7F5501E797A84007C49C7 /* Main.storyboard */; };
@@ -14,6 +16,7 @@
 		21B7F5571E797A84007C49C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21B7F5551E797A84007C49C7 /* LaunchScreen.storyboard */; };
 		21B7F5621E797A85007C49C7 /* TheMovieCritiqueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B7F5611E797A85007C49C7 /* TheMovieCritiqueTests.swift */; };
 		21B7F56D1E797A85007C49C7 /* TheMovieCritiqueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B7F56C1E797A85007C49C7 /* TheMovieCritiqueUITests.swift */; };
+		21B7F57C1E797BD2007C49C7 /* RestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B7F57B1E797BD2007C49C7 /* RestManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		212C7B851E8017CA009E2A82 /* ResponseEntityClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseEntityClass.swift; sourceTree = "<group>"; };
+		212C7B8E1E816A1A009E2A82 /* ResponseEntity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ResponseEntity.xcdatamodel; sourceTree = "<group>"; };
 		21B7F5491E797A84007C49C7 /* TheMovieCritique.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMovieCritique.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B7F54C1E797A84007C49C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21B7F54E1E797A84007C49C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +52,7 @@
 		21B7F5681E797A85007C49C7 /* TheMovieCritiqueUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheMovieCritiqueUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B7F56C1E797A85007C49C7 /* TheMovieCritiqueUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMovieCritiqueUITests.swift; sourceTree = "<group>"; };
 		21B7F56E1E797A85007C49C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21B7F57B1E797BD2007C49C7 /* RestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +103,14 @@
 		21B7F54B1E797A84007C49C7 /* TheMovieCritique */ = {
 			isa = PBXGroup;
 			children = (
+				21B7F57A1E797BBA007C49C7 /* RestManager */,
 				21B7F54C1E797A84007C49C7 /* AppDelegate.swift */,
 				21B7F54E1E797A84007C49C7 /* ViewController.swift */,
 				21B7F5501E797A84007C49C7 /* Main.storyboard */,
 				21B7F5531E797A84007C49C7 /* Assets.xcassets */,
 				21B7F5551E797A84007C49C7 /* LaunchScreen.storyboard */,
 				21B7F5581E797A84007C49C7 /* Info.plist */,
+				212C7B851E8017CA009E2A82 /* ResponseEntityClass.swift */,
 			);
 			path = TheMovieCritique;
 			sourceTree = "<group>";
@@ -123,6 +131,15 @@
 				21B7F56E1E797A85007C49C7 /* Info.plist */,
 			);
 			path = TheMovieCritiqueUITests;
+			sourceTree = "<group>";
+		};
+		21B7F57A1E797BBA007C49C7 /* RestManager */ = {
+			isa = PBXGroup;
+			children = (
+				212C7B8D1E816A1A009E2A82 /* ResponseEntity.xcdatamodeld */,
+				21B7F57B1E797BD2007C49C7 /* RestManager.swift */,
+			);
+			name = RestManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,8 +279,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21B7F57C1E797BD2007C49C7 /* RestManager.swift in Sources */,
 				21B7F54F1E797A84007C49C7 /* ViewController.swift in Sources */,
+				212C7B861E8017CA009E2A82 /* ResponseEntityClass.swift in Sources */,
 				21B7F54D1E797A84007C49C7 /* AppDelegate.swift in Sources */,
+				212C7B8F1E816A1A009E2A82 /* ResponseEntity.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +534,7 @@
 				21B7F5731E797A85007C49C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21B7F5741E797A85007C49C7 /* Build configuration list for PBXNativeTarget "TheMovieCritiqueTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +543,7 @@
 				21B7F5761E797A85007C49C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21B7F5771E797A85007C49C7 /* Build configuration list for PBXNativeTarget "TheMovieCritiqueUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,8 +552,22 @@
 				21B7F5791E797A85007C49C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		212C7B8D1E816A1A009E2A82 /* ResponseEntity.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				212C7B8E1E816A1A009E2A82 /* ResponseEntity.xcdatamodel */,
+			);
+			currentVersion = 212C7B8E1E816A1A009E2A82 /* ResponseEntity.xcdatamodel */;
+			path = ResponseEntity.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 21B7F5411E797A84007C49C7 /* Project object */;
 }

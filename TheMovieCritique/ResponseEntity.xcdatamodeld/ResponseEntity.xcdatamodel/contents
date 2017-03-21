@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Likes" representedClassName="Likes" syncable="YES" codeGenerationType="class">
+        <attribute name="created_on" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="likes_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="review_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="total_likes" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="updated_on" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="likes_review" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Review" syncable="YES"/>
+        <fetchedProperty name="create_like" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Likes"/>
+        </fetchedProperty>
+    </entity>
+    <entity name="Movie" representedClassName="Movie" syncable="YES" codeGenerationType="class">
+        <attribute name="actor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="created_on" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="director" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="movie_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="subtitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updated_on" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="String" syncable="YES"/>
+        <fetchedProperty name="create_movie" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Movie"/>
+        </fetchedProperty>
+        <fetchedProperty name="update_movie" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Movie"/>
+        </fetchedProperty>
+    </entity>
+    <entity name="Review" representedClassName="Review" syncable="YES" codeGenerationType="class">
+        <attribute name="created_on" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="movie_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="review_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="review_score" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="updated_on" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="user_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="review_movie" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Movie" syncable="YES"/>
+        <relationship name="review_user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
+        <fetchedProperty name="create_review" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Review"/>
+        </fetchedProperty>
+        <fetchedProperty name="delete_review" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Review"/>
+        </fetchedProperty>
+        <fetchedProperty name="update_review" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Review"/>
+        </fetchedProperty>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+        <attribute name="created_on" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favourite_genre" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favourite_movie" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nickname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updated_on" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="user_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="user_reputation" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="user_type" optional="YES" attributeType="String" syncable="YES"/>
+        <fetchedProperty name="create_user" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="User"/>
+        </fetchedProperty>
+        <fetchedProperty name="get_reputation" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="User"/>
+        </fetchedProperty>
+        <fetchedProperty name="get_user_by_email" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="User"/>
+        </fetchedProperty>
+        <fetchedProperty name="get_usertype" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="User"/>
+        </fetchedProperty>
+        <fetchedProperty name="update_user" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="User"/>
+        </fetchedProperty>
+    </entity>
+    <entity name="UserLikesController" representedClassName="UserLikesController" syncable="YES" codeGenerationType="class">
+        <attribute name="liked" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="review_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="user_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="user_likes_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="controller_review" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Review" syncable="YES"/>
+        <relationship name="controller_user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
+        <fetchedProperty name="create_like_controller" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="UserLikesController"/>
+        </fetchedProperty>
+    </entity>
+    <elements>
+        <element name="Likes" positionX="-5312" positionY="-3204" width="128" height="161"/>
+        <element name="Movie" positionX="-5724" positionY="-3276" width="128" height="41"/>
+        <element name="Review" positionX="-5544" positionY="-3326" width="108" height="41"/>
+        <element name="User" positionX="-5904" positionY="-3105" width="128" height="266"/>
+        <element name="UserLikesController" positionX="-5697" positionY="-3002" width="128" height="161"/>
+    </elements>
+</model>
