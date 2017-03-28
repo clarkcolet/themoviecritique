@@ -30,12 +30,13 @@
     <entity name="Review" representedClassName="Review" syncable="YES" codeGenerationType="class">
         <attribute name="created_on" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="movie_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="review_desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="review_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="review_score" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="updated_on" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="user_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="review_movie" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Movie" syncable="YES"/>
-        <relationship name="review_user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
+        <relationship name="review_user" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="User" syncable="YES"/>
         <fetchedProperty name="create_review" optional="YES" syncable="YES">
             <fetchRequest name="fetchedPropertyFetchRequest" entity="Review"/>
         </fetchedProperty>
@@ -52,6 +53,7 @@
         <attribute name="favourite_genre" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="favourite_movie" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nickname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone_number" optional="YES" syncable="YES"/>
         <attribute name="updated_on" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="user_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="user_reputation" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -77,17 +79,18 @@
         <attribute name="review_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="user_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="user_likes_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="controller_likes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Likes" syncable="YES"/>
         <relationship name="controller_review" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Review" syncable="YES"/>
-        <relationship name="controller_user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
+        <relationship name="controller_user" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="User" syncable="YES"/>
         <fetchedProperty name="create_like_controller" optional="YES" syncable="YES">
             <fetchRequest name="fetchedPropertyFetchRequest" entity="UserLikesController"/>
         </fetchedProperty>
     </entity>
     <elements>
-        <element name="Likes" positionX="-5312" positionY="-3204" width="128" height="161"/>
-        <element name="Movie" positionX="-5724" positionY="-3276" width="128" height="41"/>
-        <element name="Review" positionX="-5544" positionY="-3326" width="108" height="41"/>
-        <element name="User" positionX="-5904" positionY="-3105" width="128" height="266"/>
-        <element name="UserLikesController" positionX="-5697" positionY="-3002" width="128" height="161"/>
+        <element name="Likes" positionX="-5312" positionY="-3212" width="128" height="161"/>
+        <element name="Movie" positionX="-5850" positionY="-3420" width="128" height="206"/>
+        <element name="Review" positionX="-5544" positionY="-3326" width="108" height="236"/>
+        <element name="User" positionX="-5850" positionY="-3177" width="128" height="281"/>
+        <element name="UserLikesController" positionX="-5618" positionY="-3042" width="128" height="176"/>
     </elements>
 </model>
